@@ -1,9 +1,10 @@
 import './App.css';
+import Nav from './components/Nav';
 
 function App() {
   return (
     <div className="App">
-      <h2>Space Traveler</h2>
+      <Nav />
     </div>
   );
 }
