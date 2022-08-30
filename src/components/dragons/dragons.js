@@ -10,6 +10,7 @@ const Dragons = () => {
   useEffect(() => {
     dispatch(fetchDragons);
   }, []);
+
   return (
     <ul className="dragon-list">
       {dragons.map((dragon) => (
