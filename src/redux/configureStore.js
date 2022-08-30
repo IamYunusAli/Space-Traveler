@@ -5,7 +5,7 @@ import dragonReduce from './dragons/dragon';
 
 const rootReducer = combineReducers({
   dragon: dragonReduce,
-  missions: missionsReducer
+  missions: missionsReducer,
 });
 
 const store = configureStore({
