@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchDragons, addReservation } from '../../redux/dragons/dragon';
+import { fetchDragons, addReservation, cancelReservation } from '../../redux/dragons/dragon';
 import './dragon.css';
 
 const Dragons = () => {
@@ -15,6 +15,10 @@ const Dragons = () => {
     dispatch(addReservation(id));
   };
 
+  const handleCancelReservation = (id) => {
+    dispatch(cancelReservation(id));
+  };
+
   return (
     <ul className="dragon-list">
       {dragons.map((dragon) => (
@@ -23,8 +27,10 @@ const Dragons = () => {
           <div className="dragon-info">
             <h3>{dragon.name}</h3>
             <p>{dragon.type}</p>
+            <button type="button" className={`reserve ${dragon.reserved ? '' : 'hide'}`}>Reserved</button>
             <p>{dragon.description}</p>
-            <button type="button" className="dragon-button" onClick={() => handleAddReservation(dragon.id)}>Reservation</button>
+            <button type="button" className={`dragon-button ${dragon.reserved ? 'hide' : ''}`} onClick={() => handleAddReservation(dragon.id)}>Reservation</button>
+            <button type="button" className={`cancel-button ${dragon.reserved ? '' : 'hide'}`} onClick={() => handleCancelReservation(dragon.id)}>Cancel Reservation</button>
           </div>
         </li>
       ))}
