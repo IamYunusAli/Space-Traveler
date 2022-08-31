@@ -5,7 +5,6 @@ import './dragon.css';
 
 const Dragons = () => {
   const dragons = useSelector((state) => state.dragon);
-  console.log(dragons);
   const dispatch = useDispatch();
 
   useEffect(() => {

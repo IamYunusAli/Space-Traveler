@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
-import { Table } from 'react-bootstrap';
+import { Table, Button } from 'react-bootstrap';
+import './missions.css';
 import { getMissions } from '../../redux/missions/mission';
 
 const Missions = () => {
@@ -19,7 +20,8 @@ const Missions = () => {
           <tr>
             <th>Mission</th>
             <th>Description</th>
-            <th colSpan={2}>Status</th>
+            <th>Status</th>
+            <th className="text-light">#</th>
           </tr>
         </thead>
         <tbody>
@@ -27,8 +29,8 @@ const Missions = () => {
             <tr key={mission.mission_id}>
               <td>{mission.mission_name}</td>
               <td>{mission.description}</td>
-              <td colSpan={4}><button type="button">Not a member</button></td>
-              <td colSpan={4}><button type="button">Join mission</button></td>
+              <td className="my-buttons"><Button>Not a member</Button></td>
+              <td className="my-buttons"><Button>Join mission</Button></td>
             </tr>
           ))}
         </tbody>
