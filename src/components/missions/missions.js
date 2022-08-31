@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
-import { Table, Button } from 'react-bootstrap';
+import { Table, Button, Badge } from 'react-bootstrap';
 import './missions.css';
 import { getMissions, joinMissions, leaveMissions } from '../../redux/missions/mission';
 
@@ -40,8 +40,8 @@ const Missions = () => {
               <td>{mission.mission_name}</td>
               <td>{mission.description}</td>
               <td className="my-buttons">
-                {!mission.reserved && (<Button variant="secondary">NOT A MEMBER</Button>)}
-                {mission.reserved && (<Button>Active Member</Button>)}
+                {!mission.reserved && (<Badge bg="secondary">NOT A MEMBER</Badge>)}
+                {mission.reserved && (<Badge>Active Member</Badge>)}
               </td>
               <td className="my-buttons">
                 {!mission.reserved && (<Button variant="outline-secondary" onClick={onClickJoinMissions}>Join Mission</Button>)}
