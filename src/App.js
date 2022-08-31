@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import Missions from './components/missions/missions';
 import Dragons from './components/dragons/dragons';
-import Rockets from './components/rockets/rocckets';
+import Rockets from './components/rockets/rockets';
 import Profile from './components/profile/profile';
 
 function App() {
