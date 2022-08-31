@@ -1,0 +1,24 @@
+.my-profile {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+}
+
+li {
+  list-style-type: none;
+}
+
+.profiles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reserved {
+  border: solid 2px gray;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 5px;
+}
