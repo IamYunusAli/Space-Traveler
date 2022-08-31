@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchRockets } from '../../redux/rockets/rocketReduce';
-import './rocket.css';
+import './rockets.css';
 
 const Rockets = () => {
   const rockets = useSelector((state) => state.rockets);
