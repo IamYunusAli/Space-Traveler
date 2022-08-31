@@ -17,7 +17,7 @@ export const addReservation = (id) => ({
 export const cancelReservation = (id) => ({
   type: CANCEL_RESERVATION,
   id,
-})
+});
 
 const initstate = [];
 const dragonReduce = (state = initstate, action) => {

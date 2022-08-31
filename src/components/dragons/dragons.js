@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchDragons, addReservation, cancelReservation } from '../../redux/dragons/dragon';
+import { fetchDragons, addReservation } from '../../redux/dragons/dragon';
 import './dragon.css';
 
 const Dragons = () => {
