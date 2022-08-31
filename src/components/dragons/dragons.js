@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchDragons } from '../../redux/dragons/dragon';
+import { fetchDragons, addReservation } from '../../redux/dragons/dragon';
 import './dragon.css';
 
 const Dragons = () => {
@@ -8,8 +8,12 @@ const Dragons = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchDragons);
+    if (!dragons.length) dispatch(fetchDragons);
   }, []);
+
+  const handleAddReservation = (id) => {
+    dispatch(addReservation(id));
+  };
 
   return (
     <ul className="dragon-list">
@@ -20,7 +24,7 @@ const Dragons = () => {
             <h3>{dragon.name}</h3>
             <p>{dragon.type}</p>
             <p>{dragon.description}</p>
-            <button type="button" className="dragon-button">Reservation</button>
+            <button type="button" className="dragon-button" onClick={() => handleAddReservation(dragon.id)}>Reservation</button>
           </div>
         </li>
       ))}
