@@ -25,10 +25,10 @@
   cursor: pointer;
 }
 
-
 .hide {
   display: none;
 }
+
 .cancel-button {
   padding: 10px;
   background-color: white;
