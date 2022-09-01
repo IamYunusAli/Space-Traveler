@@ -3,20 +3,22 @@ import './profile.css';
 
 const Profile = () => {
   const dragons = useSelector((state) => state.dragon);
+  const missions = useSelector((state) => state.missions);
+  const joinedMissions = missions.filter((mission) => mission.reserved === true);
   const reservedDr = dragons.filter((e) => e.reserved === true);
   const displayDragons = () => {
     if (reservedDr.length) {
       return (
         <ul>
           { dragons.map((dragon) => (dragon.reserved === true ? (
-            <li>
+            <li key={dragon.id}>
               {dragon.name}
             </li>
           ) : null))}
         </ul>
       );
     }
-    return (<h2> 0 Reserved Dragons  </h2>);
+    return (<h4> 0 Reserved Dragons  </h4>);
   };
   return (
     <div className="my-profile">
@@ -28,11 +30,14 @@ const Profile = () => {
         </div>
       </div>
       <div className="profiles">
-        <h2>Missions</h2>
-        <div className="reserved">
-          {
-              }
-        </div>
+        <h2>My Missions</h2>
+        {!joinedMissions.length ? <h4>No Joined Missions</h4> : (
+          <ul>
+            { missions.map((mission) => (mission.reserved === true ? (
+              <li key={mission.mission_id}>{mission.mission_name}</li>
+            ) : []))}
+          </ul>
+        )}
       </div>
       <div className="profiles">
         <h2>Dragons</h2>

@@ -24,7 +24,6 @@ const Missions = () => {
   const missions = useSelector((state) => state.missions);
   return (
     <>
-      <hr />
       <Table striped bordered hover>
         <thead>
           <tr>
