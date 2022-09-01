@@ -3,10 +3,25 @@ const ADD_RESERVATION = 'ADD_RESERVATION';
 const CANCEL_RESERVATION = 'CANCEL_RESERVATION';
 const URL = 'https://api.spacexdata.com/v3/rockets';
 
+const structured = (data) => {
+  const arr = [];
+  data.forEach((element) => {
+    const rockets = {};
+    rockets.id = element.id;
+    rockets.rocket_name = element.rocket_name;
+    rockets.type = element.type;
+    rockets.description = element.description;
+    rockets.flickr_images = element.flickr_images;
+    rockets.reserved = false;
+    arr.push(rockets);
+  });
+  return arr;
+};
+
 export const fetchRockets = async (dispatch) => {
   const response = await fetch(URL);
   const data = await response.json();
-  dispatch({ type: FETCH_ROCKETS, payload: data });
+  dispatch({ type: FETCH_ROCKETS, payload: structured(data) });
 };
 
 export const addReservation = (id) => ({
