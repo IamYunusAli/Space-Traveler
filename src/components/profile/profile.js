@@ -11,14 +11,14 @@ const Profile = () => {
       return (
         <ul>
           { dragons.map((dragon) => (dragon.reserved === true ? (
-            <li>
+            <li key={dragon.id}>
               {dragon.name}
             </li>
           ) : null))}
         </ul>
       );
     }
-    return (<h2> 0 Reserved Dragons  </h2>);
+    return (<h4> 0 Reserved Dragons  </h4>);
   };
   return (
     <div className="my-profile">
@@ -30,16 +30,14 @@ const Profile = () => {
         </div>
       </div>
       <div className="profiles">
-        <h2>Missions</h2>
-        <div className="reserved">
-          {!joinedMissions.length ? <h2>No Joined Missions</h2> : (
-            <ul>
-              { missions.map((mission) => (mission.reserved === true ? (
-                <li key={mission.mission_id}>{mission.name}</li>
-              ) : []))}
-            </ul>
-          )}
-        </div>
+        <h2>My Missions</h2>
+        {!joinedMissions.length ? <h4>No Joined Missions</h4> : (
+          <ul>
+            { missions.map((mission) => (mission.reserved === true ? (
+              <li key={mission.mission_id}>{mission.mission_name}</li>
+            ) : []))}
+          </ul>
+        )}
       </div>
       <div className="profiles">
         <h2>Dragons</h2>
