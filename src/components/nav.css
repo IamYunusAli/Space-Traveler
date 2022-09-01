@@ -1,0 +1,25 @@
+.header,
+.logo,
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  padding: 20px 40px;
+}
+
+.logo {
+  gap: 15px;
+}
+
+nav li {
+  padding: 5px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+.active { text-decoration: underline; }

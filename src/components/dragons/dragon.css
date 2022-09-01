@@ -1,0 +1,46 @@
+.dragon-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dragon {
+  display: flex;
+  width: 80%;
+  gap: 20px;
+}
+
+.dragon-img {
+  width: 30%;
+  border-radius: 3px;
+}
+
+.dragon-button {
+  padding: 10px;
+  background-color: #00b4d8;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.cancel-button {
+  padding: 10px;
+  background-color: white;
+  color: #00b4d8;
+  border-radius: 3px;
+  border: solid 1.5px #00b4d8;
+  cursor: pointer;
+}
+
+.reserve {
+  background-color: #00b4d8;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+}
