@@ -37,6 +37,12 @@ enjoy
 - Twitter: [@IamYunusAli](https://twitter.com/iamyunusali)
 - LinkedIn: [Yunus Ali](https://linkedin.com/in/iamyunusali)
 
+👤 **Author **
+
+- GitHub: (https://github.com/Piercel2022)
+- Twitter: (https://twitter.com/pier_celestin)
+- LinkedIn: (https://linkedin.com/in/piercelestinmax)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
