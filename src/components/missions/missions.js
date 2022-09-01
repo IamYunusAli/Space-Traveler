@@ -1,14 +1,15 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux/es/exports';
+import { useDispatch, useSelector } from 'react-redux';
 import { Table, Button, Badge } from 'react-bootstrap';
 import './missions.css';
 import { getMissions, joinMissions, leaveMissions } from '../../redux/missions/mission';
 
 const Missions = () => {
   const dispatch = useDispatch();
+  const missions = useSelector((state) => state.missions);
 
   useEffect(() => {
-    dispatch(getMissions());
+    if (!missions.length) dispatch(getMissions());
   }, []);
 
   const onClickJoinMissions = (e) => {
@@ -21,7 +22,6 @@ const Missions = () => {
     dispatch(leaveMissions(e.target.parentNode.parentNode.id));
   };
 
-  const missions = useSelector((state) => state.missions);
   return (
     <>
       <Table striped bordered hover>
