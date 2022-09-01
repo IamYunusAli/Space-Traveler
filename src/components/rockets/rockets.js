@@ -7,7 +7,7 @@ const Rockets = () => {
   const rockets = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchRockets);
+    if (!rockets.length) dispatch(fetchRockets);
   }, []);
 
   const handleAddReservation = (id) => {
@@ -29,7 +29,7 @@ const Rockets = () => {
             <button type="button" className={`reserve ${rocket.reserved ? '' : 'hide'}`}>Reserved</button>
             <p>{rocket.description}</p>
             <button type="button" className={`rocket-button ${rocket.reserved ? 'hide' : ''}`} onClick={() => handleAddReservation(rocket.id)}>Reservation</button>
-            <button type="button" className={`rocket-button ${rocket.reserved ? '' : 'hide'}`} onClick={() => handleCancelReservation(rocket.id)}>Cancel Reservation</button>
+            <button type="button" className={`cancel-button ${rocket.reserved ? '' : 'hide'}`} onClick={() => handleCancelReservation(rocket.id)}>Cancel Reservation</button>
           </div>
         </li>
       ))}
