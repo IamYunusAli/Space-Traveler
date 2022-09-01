@@ -3,10 +3,25 @@ const ADD_RESERVATION = 'ADD_RESERVATION';
 const CANCEL_RESERVATION = 'CANCEL_RESERVATION';
 const URL = 'https://api.spacexdata.com/v3/dragons';
 
+const structured = (data) => {
+  const arr = []
+  data.forEach((element) => {
+    const dragon = {};
+    dragon.id = element.id;
+    dragon.name = element.name;
+    dragon.type = element.type;
+    dragon.description = element.description;
+    dragon.flickr_images = element.flickr_images;
+    dragon.reserved = false;
+    arr.push(dragon);
+  });
+  return arr;
+}
+
 export const fetchDragons = async (dispatch) => {
   const response = await fetch(URL);
   const data = await response.json();
-  dispatch({ type: FETCH_DRAGONS, payload: data });
+  dispatch({ type: FETCH_DRAGONS, payload: structured(data) });
 };
 
 export const addReservation = (id) => ({
