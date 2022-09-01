@@ -4,7 +4,7 @@ const CANCEL_RESERVATION = 'CANCEL_RESERVATION';
 const URL = 'https://api.spacexdata.com/v3/dragons';
 
 const structured = (data) => {
-  const arr = []
+  const arr = [];
   data.forEach((element) => {
     const dragon = {};
     dragon.id = element.id;
@@ -16,7 +16,7 @@ const structured = (data) => {
     arr.push(dragon);
   });
   return arr;
-}
+};
 
 export const fetchDragons = async (dispatch) => {
   const response = await fetch(URL);
