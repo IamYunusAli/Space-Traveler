@@ -1,15 +1,16 @@
-.rocket-list {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
 
 .rocket {
   display: flex;
-  width: 80%;
+  justify-content: center;
+  margin: 3em;
   gap: 20px;
 }
 
+.rocket-list{
+  display: block;
+  text-align: center;
+  margin: 2em;
+}
 .rocket-img {
   width: 300px;
   height: 250px;
@@ -44,4 +45,13 @@
   border-radius: 3px;
   border: none;
   cursor: pointer;
+}
+
+@media (width <= 740px) {
+ 
+ .rocket {
+  display: block;
+  margin: 2em;
+  gap: 20px;
+}
 }
